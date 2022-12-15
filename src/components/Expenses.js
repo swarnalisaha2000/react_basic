@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Card from './Card'
 import ExpenseItem from './ExpenseItem'
 import './Expenses.css'
+import ExpensesFilter from './NewExpenses/ExpensesFilter'
 
 function Expenses(props) {
-    
+  const filterchangeHandler = (selectedYear)=>{
+    console.log('inside expenses');
+    console.log(selectedYear);
+  }
   return (
-    <div className='expenses'>
+    <div>
+    <Card className='expenses'>
+      <ExpensesFilter onChangeFilter={filterchangeHandler}/>
       <ExpenseItem 
       title={props.items[0].title}
       amount={props.items[0].amount}
@@ -26,6 +33,7 @@ function Expenses(props) {
       amount={props.items[3].amount}
       date={props.items[3].date}
       />
+    </Card>
     </div>
   )
 }
