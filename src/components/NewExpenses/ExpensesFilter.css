@@ -22,3 +22,8 @@
     font-weight: bold;
     border-radius: 6px;
   }
+
+  .expenses-list__fallback {
+    color: white;
+    text-align: center;
+  }
